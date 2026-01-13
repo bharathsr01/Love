@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Ruchitha💕</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&family=Pacifico&family=Poppins:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <style>html { scroll-behavior: smooth; }</style>
+</head>
+<body>
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <img src="IMG-20250518-WA0001.jpg" alt="Profile" class="profile-pic" />
+      <div class="profile-info">
+        <div class="profile-username"><b>r_u_c_h_i_r_a_</b></div>
+        <div class="profile-date" id="profile-date"></div>
+      </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" src="music.mp3" loop autoplay></audio>
+    <button id="music-toggle" type="button" aria-label="Toggle music">
+        <span id="music-icon">🔊</span>
+    </button>
+    <!-- Confetti Animation -->
+    <canvas id="confetti-canvas"></canvas>
+    <!-- Home Section -->
+    <section class="home-section" data-aos="fade-down">
+        <div class="container">
+            <h1 data-aos="fade-up">Happy Birthday, Ruchitha💕</h1>
+            <p class="subtitle" data-aos="fade-up" data-aos-delay="200">Happy Birthday to the most caring and responsible girl I know! Your love for your family and your perfectly moody charm make you truly special. Stay amazing!</p>
+            <div class="countdown-container" data-aos="zoom-in" data-aos-delay="400">
+                <span class="countdown-label">Next Birthday In:</span>
+                <span id="countdown"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-right">Gallery</h2>
+            <div class="gallery" id="gallery">
+                <!-- Images and quotes will be injected here by script.js as modal triggers -->
+            </div>
+        </div>
+    </section>
+    <!-- Fullscreen Image Modal (for each image) -->
+    <div id="fullscreen" class="fullscreen hidden"></div>
+
+    <!-- Our Moments Section -->
+    <section class="moments-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Our Moments</h2>
+            <p class="section-text">Every moment with you is a treasure. Thank you for filling my life with so much joy, laughter, and love. Here’s to many more beautiful memories together!</p>
+        </div>
+    </section>
+
+    <!-- Wishes from My Heart Section -->
+    <section class="wishes-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Wishes from My Heart</h2>
+            <p class="section-text">May your birthday be as wonderful and special as you are to me. I wish you endless happiness, boundless love, and all your dreams coming true. You deserve the world, my Ruchitha💕!</p>
+        </div>
+    </section>
+
+    <!-- Special Message Section -->
+    <section class="special-message-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Special Message</h2>
+            <div class="special-message-content">
+                <p class="section-text">You are my everything, Ruchitha. I am so grateful for your love and presence in my life. Happy Birthday, Ruchitha Madam!💖</p>
+                <!-- Optionally, add a video below -->
+                <!-- <video controls src="your-video.mp4" class="birthday-video"></video> -->
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 900 });
+        // Music toggle logic
+        const music = document.getElementById('bg-music');
+        const toggle = document.getElementById('music-toggle');
+        const icon = document.getElementById('music-icon');
+        let muted = false;
+        toggle.onclick = function() {
+          muted = !muted;
+          music.muted = muted;
+          icon.textContent = muted ? '🔇' : '🔊';
+        };
+        document.body.addEventListener('click', function once() {
+          music.muted = false;
+          document.body.removeEventListener('click', once);
+        });
+    </script>
+</body>
+</html>
